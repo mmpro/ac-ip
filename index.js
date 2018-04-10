@@ -3,6 +3,59 @@ const ipPackage = require('ip')
 
 const acip = function() {
   /**
+   * Send an express-like request object into the function, the IP address of the request is returned.
+   *
+   * If you send req.debugMode = true, you can manually overwrite the IP with a payload parameter "ip"
+   *
+   * @param req object Express-like request object
+   */
+  const determineIP = function(req) {
+    let params = req.params && req.allParams()
+    const proxyIP = _.get(req, 'headers.x-real-ip') || _.get(req, 'headers.x-forwarded-for')
+    let ip = proxyIP || _.get(req, 'ip')
+    if (req.debugMode && _.has(params, 'ip')) ip = params.ip
+
+    if (!ip) return { message: 'noIPDetected' }
+    // x forwarded for can be a comma or space separated list - z.b. 192.168.24.73, 198.135.124.15
+    // X-Forwarded-For: client1, proxy1, proxy2 -> but client1 can be a private IP address
+    if (ip.indexOf(',') > -1) {
+      // check until we've found a non-private IP address
+      let finalIP
+      _.some(ip.split(','), function(ipToCheck) {
+        if (!ipPackage.isPrivate(_.trim(ipToCheck))) {
+          finalIP = _.trim(ipToCheck)
+          return true
+        }
+      })
+      ip = finalIP
+    }
+    return ip
+  }
+
+  /**
+   * Returns the list of IP adresses for a given CIDR block
+   * @param params.cidr -> valid cidr block - e.g. 192.168.1.134/26
+   *
+   * Returns ['127.0.0.0', '127.0.0.1']
+   */
+  const ipsFromCIDR = function(params) {
+    const cidr = params.cidr
+    const regex = /(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\/(\d{1,2})/
+    let match = cidr.match(regex)
+    const suffix = _.get(match, '[5]')
+    if (!suffix || parseInt(suffix) < 24) return []
+    // check that cidr is valid (structural check)
+    let range = ipPackage.cidrSubnet(cidr)
+    let ips = []
+    let start = ipPackage.toLong(_.get(range, 'firstAddress')) // 2130706433
+    let end = ipPackage.toLong(_.get(range, 'lastAddress')) // 2130706433
+    for (let x = start; x <= end; x += 1) {
+      ips.push(ipPackage.fromLong(x))
+    }
+    return ips
+  }
+
+  /**
    * Checks an array (list) of CIDR for validity
    *
    * @param params.cidr array of objects containing keys "cidr" and optional "type". If no type => ipv4
@@ -32,11 +85,14 @@ const acip = function() {
 
       // check if IP is a match for any of the given CIDR
       let match = _.some(cidr, function(c) {
+        console.log(params.ip, c.cidr)
         if (ipPackage.cidrSubnet(c.cidr).contains(params.ip)) {
+          console.log(params.ip, c.cidr)
           error = null
           return true
         }
       })
+      console.log(42, error, match)
       if (cb) return cb(error, match)
       return error
     }
@@ -78,7 +134,9 @@ const acip = function() {
   }
 
   return {
-    checkCIDR: checkCIDR
+    determineIP: determineIP,
+    checkCIDR: checkCIDR,
+    ipsFromCIDR: ipsFromCIDR
   }
 }
 
