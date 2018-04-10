@@ -6,6 +6,9 @@ describe('Testing CIDR', function () {
   const invalidCIDRs = [{ cidr: '8.8.0.0' }]
   const validv6CIDRs = [{ cidr: '2001:4d20::/32', type: 'ipv6' }]
 
+  let test1 = '85.182.224.128'
+  let test2 = [{ 'cidr': '85.182.224.128/26' }, { 'cidr': '62.96.36.146/32' }, { 'cidr': '62.84.220.138/32' }]
+
   it('Check if CIDR is valid', function(done) {
     let test = acip.checkCIDR({ cidr: validCIDRs })
     expect(test).toBeUndefined()
@@ -21,6 +24,13 @@ describe('Testing CIDR', function () {
   it('Check if CIDR is invalid', function(done) {
     let test = acip.checkCIDR({ cidr: invalidCIDRs })
     expect(test).toEqual({ 'additionalInfo': { 'cidr': '8.8.0.0', 'type': 'ipv4' }, 'message': 'acip_checkCIDR_thisIsNoCIDR' })
+    return done()
+  })
+
+  it('Check if IP is in CIDR ', function(done) {
+    let test = acip.checkCIDR({ ip: test1, cidr: test2 })
+    console.log(32, test)
+    expect(test).toBeTrue()
     return done()
   })
 })
