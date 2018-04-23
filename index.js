@@ -85,14 +85,11 @@ const acip = function() {
 
       // check if IP is a match for any of the given CIDR
       let match = _.some(cidr, function(c) {
-        console.log(params.ip, c.cidr)
         if (ipPackage.cidrSubnet(c.cidr).contains(params.ip)) {
-          console.log(params.ip, c.cidr)
           error = null
           return true
         }
       })
-      console.log(42, error, match)
       if (cb) return cb(error, match)
       return error
     }
