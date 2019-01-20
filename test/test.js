@@ -29,8 +29,15 @@ describe('Testing CIDR', function () {
 
   it('Check if IP is in CIDR ', function(done) {
     let test = acip.checkCIDR({ ip: test1, cidr: test2 })
-    console.log(32, test)
-    expect(test).toBeTrue()
+    expect(test).toBe(null)
     return done()
+  })
+
+  it('Check if IP is in CIDR using callback ', function(done) {
+    acip.checkCIDR({ ip: test1, cidr: test2 }, (err, result) => {
+      if (err) return done(err)
+      expect(result).toBe(true)
+      return done()
+    })
   })
 })
