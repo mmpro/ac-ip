@@ -1,3 +1,14 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/mmpro/ac-ip/compare/v1.0.1...v1.0.2) (2019-01-20 10:54)
+
+
+### Bug Fixes
+
+* **Misc:** Minor code cleanup | MP ([a65b674](https://github.com/mmpro/ac-ip/commit/a65b674))    
+  Minor code cleanup
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/mmpro/ac-ip/compare/v1.0.0...v1.0.1) (2018-09-22 10:27)
 
