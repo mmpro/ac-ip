@@ -131,9 +131,9 @@ const acip = function() {
   }
 
   return {
-    determineIP: determineIP,
-    checkCIDR: checkCIDR,
-    ipsFromCIDR: ipsFromCIDR
+    determineIP,
+    checkCIDR,
+    ipsFromCIDR
   }
 }
 
