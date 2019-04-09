@@ -9,10 +9,16 @@ const acip = function() {
    *
    * @param req object Express-like request object
    */
-  const determineIP = function(req) {
+  const determineIP = (req) => {
     let params = req.params && req.allParams()
     const proxyIP = _.get(req, 'headers.x-real-ip') || _.get(req, 'headers.x-forwarded-for')
     let ip = proxyIP || _.get(req, 'ip')
+    // allow "overwriting" IP for local testing, but not in production, send X-AdmiralCloud-Header "true"
+    if (_.get(req, 'headers.x-admiralcloud-test') && _.has(params, 'ip') && _.indexOf(['development', 'test'], _.get(process, 'env.NODE_ENV')) > -1 ) {
+      ip = params.ip
+    }
+
+    // LEGACY - REMOVE 2019-06-30
     if (req.debugMode && _.has(params, 'ip')) ip = params.ip
 
     if (!ip) return { message: 'noIPDetected' }
