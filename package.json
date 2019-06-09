@@ -5,6 +5,8 @@
     "ip": "^1.1.5",
     "lodash": "^4.17.11"
   },
+  "repository": "mmpro/ac-ip",
+  "license": "MIT",
   "devDependencies": {
     "ac-conventional-changelog-template": "git+https://github.com/mmpro/ac-conventional-changelog-template.git",
     "ac-jenkins": "git+ssh://git@ac-jenkins.github.com:mmpro/ac-jenkins",
