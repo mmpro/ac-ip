@@ -1,3 +1,14 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/mmpro/ac-ip/compare/v1.0.3...v1.0.4) (2019-06-09 17:16)
+
+
+### Bug Fixes
+
+* **Misc:** Do not user req.allParams | MP ([57e5e4e](https://github.com/mmpro/ac-ip/commit/57e5e4e))    
+  req.allParams is not available for non-sails APIs
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/mmpro/ac-ip/compare/v1.0.2...v1.0.3) (2019-04-09 16:22)
 
