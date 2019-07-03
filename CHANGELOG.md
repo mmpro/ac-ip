@@ -1,3 +1,14 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/mmpro/ac-ip/compare/v1.0.4...v1.1.0) (2019-07-03 15:20)
+
+
+### Features
+
+* **Misc:** New functions to make IPs GDPR ready and to check IPs against a list of IPs | MP ([40c2e24](https://github.com/mmpro/ac-ip/commit/40c2e24))    
+  New functions to make IPs GDPR ready and to check IPs against a list of IPs
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/mmpro/ac-ip/compare/v1.0.3...v1.0.4) (2019-06-09 17:16)
 
