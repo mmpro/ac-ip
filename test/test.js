@@ -41,3 +41,31 @@ describe('Testing CIDR', function () {
     })
   })
 })
+
+describe('IPs to privacy', () => {
+  const ips = ['8.8.8.8', '4.4.4.4']
+
+  it('Check that IPs are masked properly', (done) => {
+    let test = acip.ipsToPrivacy(ips)
+    expect(test).toEqual(['8.8.x.x', '4.4.x.x'])
+    return done()
+  })
+})
+
+describe('IP in IP list', () => {
+  const ip = '4.4.x.x'
+  const ipFail = '1.1.x.x'
+  const ips = ['8.8.x.x', '4.4.x.x']
+
+  it('Check that IP is in list', (done) => {
+    let test = acip.ipInIPList({ ips, ip })
+    expect(test).toEqual(true)
+    return done()
+  })
+
+  it('Check that IP is not in list', (done) => {
+    let test = acip.ipInIPList({ ips, ipFail })
+    expect(test).toEqual(false)
+    return done()
+  })
+})

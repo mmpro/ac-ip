@@ -135,10 +135,37 @@ const acip = function() {
     }
   }
 
+  /**
+   * Ingests a list of IPv4 addresses and returns them with the last 2 octets removed/replaced with xxx
+   * @param {*} params.ips
+   */
+  const ipsToPrivacy = (ips) => {
+    const regex = /(\d{1,3}\.\d{1,3}\.)(\d{1,3}\.\d{1,3})/
+    ips = _.map(ips, ip => {
+      return ip.replace(regex, (match, p1) => {
+        return p1 + 'x.x'
+      })
+    })
+    return ips
+  }
+
+  /**
+   * Checks is an IP is in an IP list
+   * @param params.ip STRING ip IP address to check
+   * @param params.ips ARRAY list of ips
+   */
+  const ipInIPList = (params) => {
+    const ip = _.get(params, 'ip')
+    const ips = _.uniq(_.get(params, 'ips'))
+    return _.indexOf(ips, ip) >= 0
+  }
+
   return {
     determineIP,
     checkCIDR,
-    ipsFromCIDR
+    ipsFromCIDR,
+    ipsToPrivacy,
+    ipInIPList
   }
 }
 
