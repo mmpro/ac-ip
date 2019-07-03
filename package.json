@@ -9,7 +9,6 @@
   "license": "MIT",
   "devDependencies": {
     "ac-conventional-changelog-template": "git+https://github.com/mmpro/ac-conventional-changelog-template.git",
-    "ac-jenkins": "git+ssh://git@ac-jenkins.github.com:mmpro/ac-jenkins",
     "corp-semantic-release": "git+https://github.com/mmpro/corp-semantic-release.git",
     "cz-customizable": "git+https://github.com/mmpro/cz-customizable.git",
     "eslint": "^5.16.0",
