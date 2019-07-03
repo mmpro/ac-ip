@@ -141,12 +141,12 @@ const acip = function() {
    */
   const ipsToPrivacy = (ips) => {
     const regex = /(\d{1,3}\.\d{1,3}\.)(\d{1,3}\.\d{1,3})/
-    ips = _.map(ips, ip => {
+    ips = _.map(_.compact(_.uniq(ips)), ip => {
       return ip.replace(regex, (match, p1) => {
         return p1 + 'x.x'
       })
     })
-    return ips
+    return _.uniq(ips)
   }
 
   /**
