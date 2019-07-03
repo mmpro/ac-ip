@@ -1,3 +1,14 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/mmpro/ac-ip/compare/v1.1.0...v1.1.1) (2019-07-03 15:56)
+
+
+### Bug Fixes
+
+* **Misc:** Return unique array for ipsToPrivacy | MP ([c51318f](https://github.com/mmpro/ac-ip/commit/c51318f))    
+  Make sure to group ips
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/mmpro/ac-ip/compare/v1.0.4...v1.1.0) (2019-07-03 15:20)
 
