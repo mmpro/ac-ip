@@ -1,3 +1,14 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/mmpro/ac-ip/compare/v1.1.2...v1.1.3) (2019-10-06 09:15)
+
+
+### Bug Fixes
+
+* **Misc:** Updated packages / Security fix | MP ([8e4c21c](https://github.com/mmpro/ac-ip/commit/8e4c21c))    
+  Updated packages / Security fix
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/mmpro/ac-ip/compare/v1.1.1...v1.1.2) (2019-07-24 19:28)
 
