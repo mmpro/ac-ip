@@ -1,3 +1,14 @@
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/mmpro/ac-ip/compare/v1.1.3...v1.1.4) (2019-10-06 12:53)
+
+
+### Bug Fixes
+
+* **Misc:** Send IP as parameter if not in production mode | MP ([2a5725c](https://github.com/mmpro/ac-ip/commit/2a5725c))    
+  For easier debugging it is now possible to just send the IP address as query parameter.
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/mmpro/ac-ip/compare/v1.1.2...v1.1.3) (2019-10-06 09:15)
 
