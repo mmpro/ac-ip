@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const ipPackage = require('ip')
 
-const acip = function() {
+const acip = () => {
   /**
    * Send an express-like request object into the function, the IP address of the request is returned.
    *
@@ -13,7 +13,7 @@ const acip = function() {
     const proxyIP = _.get(req, 'headers.x-real-ip') || _.get(req, 'headers.x-forwarded-for')
     let ip = proxyIP || _.get(req, 'ip')
     // allow "overwriting" IP for local testing, but not in production, send X-AdmiralCloud-Header "true"
-    if (_.get(req, 'headers.x-admiralcloud-test') && _.has(req, 'query.ip') && _.indexOf(['development', 'test'], _.get(process, 'env.NODE_ENV')) > -1) {
+    if (_.has(req, 'query.ip') && _.indexOf(['development', 'test'], _.get(process, 'env.NODE_ENV')) > -1) {
       ip = _.get(req, 'query.ip')
     }
 
@@ -26,7 +26,7 @@ const acip = function() {
     if (ip.indexOf(',') > -1) {
       // check until we've found a non-private IP address
       let finalIP
-      _.some(ip.split(','), function(ipToCheck) {
+      _.some(ip.split(','), (ipToCheck) => {
         if (!ipPackage.isPrivate(_.trim(ipToCheck))) {
           finalIP = _.trim(ipToCheck)
           return true
@@ -76,7 +76,7 @@ const acip = function() {
    *
    */
 
-  const checkCIDR = function(params, cb) {
+  const checkCIDR = (params, cb) => {
     // 1 check if array
     const cidr = _.isArray(params.cidr) && params.cidr.length > 0 && params.cidr
     if (!cidr) {
@@ -101,7 +101,7 @@ const acip = function() {
     else {
       // check if all cidrs are valid
       let error
-      _.some(cidr, function(c) {
+      _.some(cidr, c => {
         if (!_.isString(c.cidr)) error = { message: 'acip_checkCIDR_cidrIsNotValid' }
         else if (c.cidr.indexOf('/') < 0) error = { message: 'acip_checkCIDR_thisIsNoCIDR' }
         else if (!c.type || c.type === 'ipv4') {
