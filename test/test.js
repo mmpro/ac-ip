@@ -69,3 +69,35 @@ describe('IP in IP list', () => {
     return done()
   })
 })
+
+describe('Is IP private', () => {
+  const privateIPv4 = '127.0.0.1'
+  const privateIPv6 = '::ffff:172.31.7.78'
+  const publicIPv4 = '8.8.8.8'
+  const publicIPv6 = '2001:4860:4860::8888'
+
+  it('Check private IPv4 address', done => {
+    let test = acip.isPrivate(privateIPv4)
+    expect(test).toEqual(true)
+    return done()
+  })
+
+  it('Check private IPv6 address', done => {
+    let test = acip.isPrivate(privateIPv6)
+    expect(test).toEqual(true)
+    return done()
+  })
+
+  it('Check public IPv4 address', done => {
+    let test = acip.isPrivate(publicIPv4)
+    expect(test).toEqual(false)
+    return done()
+  })
+
+  it('Check public IPv6 address', done => {
+    let test = acip.isPrivate(publicIPv6)
+    expect(test).toEqual(false)
+    return done()
+  })
+
+})

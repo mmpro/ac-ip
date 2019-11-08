@@ -11,14 +11,12 @@
     "ac-conventional-changelog-template": "git+https://github.com/mmpro/ac-conventional-changelog-template.git",
     "corp-semantic-release": "git+https://github.com/mmpro/corp-semantic-release.git",
     "cz-customizable": "git+https://github.com/mmpro/cz-customizable.git",
-    "eslint": "6.5.x",
+    "eslint": "6.6.x",
     "expect": "^24.9.x",
     "husky": "3.x",
     "mocha": "6.2.x",
     "mocha-jenkins-reporter": "^0.4.2",
-    "mocha-junit-reporter": "1.x",
-    "pretty-hrtime": "^1.0.3",
-    "pretty-js": "^0.2.0"
+    "mocha-junit-reporter": "1.x"
   },
   "config": {
     "commitizen": {

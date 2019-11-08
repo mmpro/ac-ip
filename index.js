@@ -160,12 +160,17 @@ const acip = () => {
     return _.indexOf(ips, ip) >= 0
   }
 
+  const isPrivate = (ip) => {
+    return ipPackage.isPrivate(_.trim(ip))
+  }
+
   return {
     determineIP,
     checkCIDR,
     ipsFromCIDR,
     ipsToPrivacy,
-    ipInIPList
+    ipInIPList,
+    isPrivate
   }
 }
 
