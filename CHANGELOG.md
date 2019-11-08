@@ -1,3 +1,14 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/mmpro/ac-ip/compare/v1.1.4...v1.2.0) (2019-11-08 10:32)
+
+
+### Features
+
+* **Misc:** CHeck if IP is private | MP ([a83311517acfa828c1ca6f2fe9dc42a0d986a955](https://github.com/mmpro/ac-ip/commit/a83311517acfa828c1ca6f2fe9dc42a0d986a955))    
+  New function "isPrivate" to check if a given IP is public or private
+
+
+
 <a name="1.1.4"></a>
 ## [1.1.4](https://github.com/mmpro/ac-ip/compare/v1.1.3...v1.1.4) (2019-10-06 12:53)
 
