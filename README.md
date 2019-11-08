@@ -26,12 +26,13 @@ const privacyIP = acts.ipsToPrivacy(['1.2.3.4', ...])
 ```
 
 ### Check if IP is private
+```
 const isPrivate = acts.isPrivate('1.2.3.4')
 // -> false
 
 const isPrivate = acts.isPrivate('127.0.0.1')
 // -> true
-
+```
 
 
 ## Links
