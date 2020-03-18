@@ -67,7 +67,7 @@ const acip = () => {
    * @param params.ip string ip address to check against the given cidrs -> return true if matching
    * @param params.noMatchAllowed BOOL Only in combination with param.ip - if true, no error if returned if there is no match for the IP in given CIDR
    *
-   * @param params.cb OPT (err, match) -> match is true if ip is given and matches CIDR
+   * @param params.cb OPT (err, match) -> match is the matching CIDR if ip is given
    *
    * [{
     "cidr": "2001:280::/32",
@@ -89,9 +89,11 @@ const acip = () => {
       if (params.noMatchAllowed) error = null
 
       // check if IP is a match for any of the given CIDR
-      let match = _.some(cidr, (c) => {
+      let match
+      _.some(cidr, (c) => {
         if (ipPackage.cidrSubnet(c.cidr).contains(params.ip)) {
           error = null
+          match = c.cidr 
           return true
         }
       })

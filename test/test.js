@@ -1,5 +1,6 @@
 const expect = require('expect')
 const acip = require('../index')
+const _ = require('lodash')
 
 describe('Testing CIDR', function () {
   const validCIDRs = [{ cidr: '8.8.0.0/16' }]
@@ -36,7 +37,7 @@ describe('Testing CIDR', function () {
   it('Check if IP is in CIDR using callback ', function(done) {
     acip.checkCIDR({ ip: test1, cidr: test2 }, (err, result) => {
       if (err) return done(err)
-      expect(result).toBe(true)
+      expect(result).toEqual(_.get(_.first(test2), 'cidr'))
       return done()
     })
   })
