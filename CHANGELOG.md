@@ -1,3 +1,14 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/mmpro/ac-ip/compare/v1.2.0...v1.3.0) (2020-03-18 11:05)
+
+
+### Features
+
+* **Misc:** checkCIDR now returns the matching CIDR instead of true | MP ([8a34f26c328d666ae803f5bef3b6aa5f14677051](https://github.com/mmpro/ac-ip/commit/8a34f26c328d666ae803f5bef3b6aa5f14677051))    
+  checkCIDR now returns the matching CIDR instead of true
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/mmpro/ac-ip/compare/v1.1.4...v1.2.0) (2019-11-08 10:32)
 
