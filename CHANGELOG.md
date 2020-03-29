@@ -1,3 +1,12 @@
+<a name="1.3.1"></a>
+
+## [1.3.1](https://github.com/mmpro/ac-ip/compare/v1.3.0..v1.3.1) (2020-03-29 14:04:57)
+
+
+### Bug Fix
+
+* **App:** Prepare repository for AC semantic release  | MP | [30dadc928a5ed428d73b01ea0efe1afc1dffc94c](https://github.com/mmpro/ac-ip/commit/30dadc928a5ed428d73b01ea0efe1afc1dffc94c)    
+Cleaned up repository and use ac-semantic-release
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/mmpro/ac-ip/compare/v1.2.0...v1.3.0) (2020-03-18 11:05)
 
