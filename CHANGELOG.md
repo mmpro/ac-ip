@@ -1,3 +1,12 @@
+<a name="1.3.2"></a>
+
+## [1.3.2](https://github.com/mmpro/ac-ip/compare/v1.3.1..v1.3.2) (2020-04-01 09:10:16)
+
+
+### Bug Fix
+
+* **App:** Use statusCode 420 in message if ip is not in range | MP | [995b22dd92a4914fc6272a5e24af588e3c328982](https://github.com/mmpro/ac-ip/commit/995b22dd92a4914fc6272a5e24af588e3c328982)    
+IP no in range is not typcical error, but more like a preconditon fail. That's why we now use statusCode 420 in addition to the error message. This way you can decide whether you want to treat it as error or as warning.
 <a name="1.3.1"></a>
 
 ## [1.3.1](https://github.com/mmpro/ac-ip/compare/v1.3.0..v1.3.1) (2020-03-29 14:04:57)
