@@ -85,7 +85,7 @@ const acip = () => {
     }
 
     if (params.ip) {
-      let error = { message: 'acip_checkCIDR_ipNotInCIDRrange' }
+      let error = { message: 'acip_checkCIDR_ipNotInCIDRrange', statusCode: 420 }
       if (params.noMatchAllowed) error = null
 
       // check if IP is a match for any of the given CIDR
