@@ -1,3 +1,12 @@
+<a name="1.3.3"></a>
+
+## [1.3.3](https://github.com/mmpro/ac-ip/compare/v1.3.2..v1.3.3) (2020-04-03 10:14:20)
+
+
+### Bug Fix
+
+* **App:** Fallback to development environment if none set | MP | [83c11ce93938ff00e2e70e0972bd9746fe032abd](https://github.com/mmpro/ac-ip/commit/83c11ce93938ff00e2e70e0972bd9746fe032abd)    
+If process has not set any environment via NODE_ENV, then fallback to development
 <a name="1.3.2"></a>
 
 ## [1.3.2](https://github.com/mmpro/ac-ip/compare/v1.3.1..v1.3.2) (2020-04-01 09:10:16)
