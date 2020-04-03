@@ -13,7 +13,7 @@ const acip = () => {
     const proxyIP = _.get(req, 'headers.x-real-ip') || _.get(req, 'headers.x-forwarded-for')
     let ip = proxyIP || _.get(req, 'ip')
     // allow "overwriting" IP for local testing, but not in production, send X-AdmiralCloud-Header "true"
-    if (_.has(req, 'query.ip') && _.indexOf(['development', 'test'], _.get(process, 'env.NODE_ENV')) > -1) {
+    if (_.has(req, 'query.ip') && _.indexOf(['development', 'test'], _.get(process, 'env.NODE_ENV', 'development')) > -1) {
       ip = _.get(req, 'query.ip')
     }
 
