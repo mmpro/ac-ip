@@ -20,7 +20,7 @@ const acip = () => {
     // LEGACY - REMOVE 2019-06-30
     if (req.debugMode && _.has(req, 'query.ip')) ip = _.get(req, 'query.ip')
 
-    if (!ip) return { message: 'noIPDetected' }
+    if (!ip) return { code: 9000, message: 'acip_determineIP_noIPDetected' }
     // x forwarded for can be a comma or space separated list - z.b. 192.168.24.73, 198.135.124.15
     // X-Forwarded-For: client1, proxy1, proxy2 -> but client1 can be a private IP address
     if (ip.indexOf(',') > -1) {
@@ -80,12 +80,12 @@ const acip = () => {
     // 1 check if array
     const cidr = _.isArray(params.cidr) && params.cidr.length > 0 && params.cidr
     if (!cidr) {
-      if (cb) return cb({ message: 'acip_checkCIDR_listIsEmpty' })
-      return { message: 'acip_checkCIDR_listIsEmpty' }
+      if (cb) return cb({ code: 9001, message: 'acip_checkCIDR_listIsEmpty' })
+      return { code: 9001, message: 'acip_checkCIDR_listIsEmpty' }
     }
 
     if (params.ip) {
-      let error = { message: 'acip_checkCIDR_ipNotInCIDRrange', statusCode: 420 }
+      let error = { code: 9002, message: 'acip_checkCIDR_ipNotInCIDRrange', statusCode: 420 }
       if (params.noMatchAllowed) error = null
 
       // check if IP is a match for any of the given CIDR
@@ -104,26 +104,26 @@ const acip = () => {
       // check if all cidrs are valid
       let error
       _.some(cidr, c => {
-        if (!_.isString(c.cidr)) error = { message: 'acip_checkCIDR_cidrIsNotValid' }
-        else if (c.cidr.indexOf('/') < 0) error = { message: 'acip_checkCIDR_thisIsNoCIDR' }
+        if (!_.isString(c.cidr)) error = { code: 9003, message: 'acip_checkCIDR_cidrIsNotValid' }
+        else if (c.cidr.indexOf('/') < 0) error = { code: 9004, message: 'acip_checkCIDR_thisIsNoCIDR' }
         else if (!c.type || c.type === 'ipv4') {
           // check mask (max is 32)
           let mask = _.last(_.split(_.get(c, 'cidr', ''), '/'))
           if (mask > 32) {
-            error = { message: 'acip_checkCIDR_maskInvalid' }
+            error = { code: 9005, message: 'acip_checkCIDR_maskInvalid' }
           }
           else if (!ipPackage.isV4Format(ipPackage.cidr(c.cidr))) {
-            error = { message: 'acip_checkCIDR_invalid' }
+            error = { code: 9006, message: 'acip_checkCIDR_invalid' }
           }
         }
         else if (c.type === 'ipv6') {
           // check mask (max is 128)
           let mask = _.last(_.split(_.get(c, 'cidr', ''), '/'))
           if (mask > 128) {
-            error = { message: 'acip_checkCIDR_maskInvalid' }
+            error = { code: 9007, message: 'acip_checkCIDR_maskInvalid' }
           }
           else if (!ipPackage.isV6Format(ipPackage.cidr(c.cidr))) {
-            error = { message: 'acip_checkCIDR_invalid' }
+            error = { code: 9006, message: 'acip_checkCIDR_invalid' }
           }
         }
 

@@ -34,6 +34,23 @@ const isPrivate = acts.isPrivate('127.0.0.1')
 // -> true
 ```
 
+# Error codes
+All errors have a message, but messages can change. Therefor all error messages now also have an error code:
+
+| Code | Message |
+|---|---|
+| 9000 | acip_determineIP_noIPDetected |
+| 9001 | acip_checkCIDR_listIsEmpty |
+| 9002 | acip_checkCIDR_ipNotInCIDRrange |
+| 9003 | acip_checkCIDR_cidrIsNotValid |
+| 9004 | acip_checkCIDR_thisIsNoCIDR |
+| 9005 | acip_checkCIDR_maskInvalid |
+| 9006 | acip_checkCIDR_invalid |
+| 9007 | acip_checkCIDR_maskInvalid |
+
+
+
+
 
 ## Links
 - [Website](https://www.admiralcloud.com/)
