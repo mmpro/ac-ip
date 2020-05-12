@@ -1,6 +1,6 @@
 {
   "name": "ac-ip",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "dependencies": {
     "ip": "^1.1.5",
     "lodash": "4.x"

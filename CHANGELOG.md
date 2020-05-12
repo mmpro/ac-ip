@@ -1,3 +1,22 @@
+<a name="1.3.4"></a>
+
+## [1.3.4](https://github.com/mmpro/ac-ip/compare/v1.3.3..v1.3.4) (2020-05-12 08:50:47)
+
+
+### Bug Fix
+
+* **App:** Add error codes | MP | [3e70c7818554c3837ce4ebeec768fe95352212b4](https://github.com/mmpro/ac-ip/commit/3e70c7818554c3837ce4ebeec768fe95352212b4)    
+Add error codes in addition to error message
+### Tests
+
+* **App:** Fixed test | MP | [cf5a8d8399e597ad4d8e1a0e6b1dde43255941f2](https://github.com/mmpro/ac-ip/commit/cf5a8d8399e597ad4d8e1a0e6b1dde43255941f2)    
+Add code to error response
+### Chores
+
+* **App:** Updated packages | MP | [83c937eeed2eab9bba89974277b87fd52ef79885](https://github.com/mmpro/ac-ip/commit/83c937eeed2eab9bba89974277b87fd52ef79885)    
+Updated packages
+* **undefined:** Updated packages | MP | [18845753d849c612113a9a6b0a74bd5454db0da8](https://github.com/mmpro/ac-ip/commit/18845753d849c612113a9a6b0a74bd5454db0da8)    
+Updated packages
 <a name="1.3.3"></a>
 
 ## [1.3.3](https://github.com/mmpro/ac-ip/compare/v1.3.2..v1.3.3) (2020-04-03 10:14:20)
