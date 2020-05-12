@@ -88,9 +88,9 @@
     "@types/yargs-parser" "*"
 
 ac-semantic-release@^0.1.1:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/ac-semantic-release/-/ac-semantic-release-0.1.3.tgz#59d5d93cd4ee99a3986a11c76d53c139cb3b047a"
-  integrity sha512-Sj+UaZ+EQGxIId5fhqR8tBwdciIcSnc994Weym6DnxNNmDhDXKD/9w71iYOzIBfIXjdI//IfUZKnmKVr/+B7Bw==
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/ac-semantic-release/-/ac-semantic-release-0.1.4.tgz#81443ec434f2dfa65c4da73da9576461beacfeb3"
+  integrity sha512-lHileco3ZaaYg2F5M6n0QgmpiUgiFs97wtNxfqr3NAb82IBUpve+ViQAqtx3AGz+L6ZWst50VSJSPFjRp26IZw==
   dependencies:
     async "^3.2.0"
     inquirer "^7.1.0"
