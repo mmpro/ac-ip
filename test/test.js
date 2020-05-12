@@ -24,7 +24,7 @@ describe('Testing CIDR', function () {
 
   it('Check if CIDR is invalid', function(done) {
     let test = acip.checkCIDR({ cidr: invalidCIDRs })
-    expect(test).toEqual({ 'additionalInfo': { 'cidr': '8.8.0.0', 'type': 'ipv4' }, 'message': 'acip_checkCIDR_thisIsNoCIDR' })
+    expect(test).toEqual({ 'additionalInfo': { 'cidr': '8.8.0.0', 'type': 'ipv4' }, code: 9004, 'message': 'acip_checkCIDR_thisIsNoCIDR' })
     return done()
   })
 
