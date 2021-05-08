@@ -8,19 +8,15 @@
   "repository": "https://github.com/mmpro/ac-ip",
   "license": "MIT",
   "devDependencies": {
-    "ac-semantic-release": "^0.1.1",
-    "eslint": "^7.0.0",
-    "expect": "^26.0.1",
-    "husky": "^4.2.3",
-    "mocha": "^7.1.1"
+    "ac-semantic-release": "^0.2.5",
+    "eslint": "^7.26.0",
+    "expect": "^26.6.2",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0"
   },
   "scripts": {
     "test": "mocha --reporter spec",
-    "test-jenkins": "JUNIT_REPORT_PATH=./report.xml mocha --colors --reporter mocha-jenkins-reporter --reporter-options junit_report_name='AC IP'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "make lint-check"
-    }
+    "test-jenkins": "JUNIT_REPORT_PATH=./report.xml mocha --colors --reporter mocha-jenkins-reporter --reporter-options junit_report_name='AC IP'",
+    "coverage": "nyc mocha --reporter spec"
   }
 }
