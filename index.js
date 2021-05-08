@@ -39,9 +39,9 @@ const acip = () => {
 
   /**
    * Returns the list of IP adresses for a given CIDR block
-   * @param params.cidr -> valid cidr block - e.g. 192.168.1.134/26
-   *
-   * Returns ['127.0.0.0', '127.0.0.1']
+   * @param params.cidr STRING -> valid cidr block - e.g. 192.168.1.134/26
+   * ipsFromCIDR({ cidr: '8.8.8.8/31' })
+   * Returns ['8.8.8.8', '8.8.8.9']
    */
   const ipsFromCIDR = function(params) {
     const cidr = params.cidr
