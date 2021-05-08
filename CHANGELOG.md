@@ -1,3 +1,24 @@
+<a name="1.3.5"></a>
+
+## [1.3.5](https://github.com/mmpro/ac-ip/compare/v1.3.4..v1.3.5) (2021-05-08 07:22:35)
+
+
+### Bug Fix
+
+* **App:** Force version bump | MP | [0cae9b46eb613b86bd6471fe8940fd9c9c4f1a30](https://github.com/mmpro/ac-ip/commit/0cae9b46eb613b86bd6471fe8940fd9c9c4f1a30)    
+Force version bump
+### Tests
+
+* **Misc:** Added test | MP | [9093f7b0bb5c4cf58fb0ce9f41fa708a3f406220](https://github.com/mmpro/ac-ip/commit/9093f7b0bb5c4cf58fb0ce9f41fa708a3f406220)    
+Test coverage is now ~99%
+### Chores
+
+* **App:** Updated gitignore | MP | [29748cfe061af03bd162e39f388b1e4537b60c6f](https://github.com/mmpro/ac-ip/commit/29748cfe061af03bd162e39f388b1e4537b60c6f)    
+Updated gitignore
+### Chores
+
+* **Misc:** Updated packages | MP | [f4ace7c58b7c1d60b01c1c6634cf816b4bceadf8](https://github.com/mmpro/ac-ip/commit/f4ace7c58b7c1d60b01c1c6634cf816b4bceadf8)    
+Updated packages
 <a name="1.3.4"></a>
 
 ## [1.3.4](https://github.com/mmpro/ac-ip/compare/v1.3.3..v1.3.4) (2020-05-12 08:50:47)
